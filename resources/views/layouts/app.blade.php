@@ -50,12 +50,12 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {{ request()->routeIs('admin.muzakki') ? 'active' : '' }}" href="{{ route('admin.muzakki') }}">
+                                <a class="nav-link {{ request()->routeIs('admin.muzakki.*') ? 'active' : '' }}" href="{{ route('admin.muzakki.index') }}">
                                     Data Muzakki
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {{ request()->routeIs('admin.transaksi') ? 'active' : '' }}" href="{{ route('admin.transaksi') }}">
+                                <a class="nav-link {{ request()->routeIs('admin.transaksi.*') ? 'active' : '' }}" href="{{ route('admin.transaksi.index') }}">
                                     Transaksi Zakat
                                 </a>
                             </li>

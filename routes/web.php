@@ -12,8 +12,8 @@ Route::get('/', function () {
 // Admin Panitia Routes
 Route::middleware(['auth', 'role:admin_panitia'])->prefix('admin')->name('admin.')->group(function () {
     Route::get('/dashboard', [AdminPanitiaController::class, 'dashboard'])->name('dashboard');
-    Route::get('/muzakki', [AdminPanitiaController::class, 'muzakki'])->name('muzakki');
-    Route::get('/transaksi', [AdminPanitiaController::class, 'transaksi'])->name('transaksi');
+    Route::resource('muzakki', \App\Http\Controllers\MuzakkiController::class);
+    Route::resource('transaksi', \App\Http\Controllers\TransaksiZakatController::class);
     Route::get('/laporan', [AdminPanitiaController::class, 'laporan'])->name('laporan');
     Route::get('/profil', [AdminPanitiaController::class, 'profil'])->name('profil');
 });

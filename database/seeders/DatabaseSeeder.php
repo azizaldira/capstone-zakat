@@ -28,5 +28,10 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('password123'),
             'role' => 'amil',
         ]);
+
+        $this->call([
+            MuzakkiSeeder::class,
+            TransaksiZakatSeeder::class,
+        ]);
     }
 }
