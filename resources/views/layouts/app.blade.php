@@ -43,56 +43,109 @@
                         <h5 class="text-white">ZIS Al Madani</h5>
                     </div>
                     <ul class="nav flex-column px-2">
-                        @if(Auth::user()->isAdminPanitia())
+                        <!-- Common Menu (All Roles) -->
+                        <hr class="sidebar-divider">
+                        <div class="sidebar-heading">Fitur Umum</div>
+                        
+                        <li class="nav-item">
+                            <a class="nav-link {{ request()->routeIs('profil.*') ? 'active' : '' }}" href="{{ route('profil.index') }}">
+                                <i class="bi bi-person-badge"></i>
+                                <span>Profil Pengguna</span>
+                            </a>
+                        </li>
+
+                        @if(auth()->user()->role == 'admin_panitia')
+                            <!-- Admin Panitia Menu -->
+                            <hr class="sidebar-divider">
+                            <div class="sidebar-heading">Menu Utama Admin</div>
                             <li class="nav-item">
                                 <a class="nav-link {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}" href="{{ route('admin.dashboard') }}">
-                                    Dashboard
+                                    <i class="bi bi-speedometer2"></i>
+                                    <span>Dashboard</span>
                                 </a>
                             </li>
+                            
+                            <hr class="sidebar-divider">
+                            <div class="sidebar-heading">Master Data Admin</div>
                             <li class="nav-item">
                                 <a class="nav-link {{ request()->routeIs('admin.muzakki.*') ? 'active' : '' }}" href="{{ route('admin.muzakki.index') }}">
-                                    Data Muzakki
+                                    <i class="bi bi-people"></i>
+                                    <span>Data Muzakki</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link {{ request()->routeIs('admin.transaksi.*') ? 'active' : '' }}" href="{{ route('admin.transaksi.index') }}">
-                                    Transaksi Zakat
+                                    <i class="bi bi-cash-stack"></i>
+                                    <span>Transaksi Zakat</span>
+                                </a>
+                            </li>
+
+                            <!-- Admin Panitia Laporan -->
+                            <hr class="sidebar-divider">
+                            <div class="sidebar-heading">Laporan & Cetak</div>
+                            <li class="nav-item">
+                                <a class="nav-link {{ request()->routeIs('admin.laporan.transaksi*') ? 'active' : '' }}" href="{{ route('admin.laporan.transaksi') }}">
+                                    <i class="bi bi-file-earmark-bar-graph"></i>
+                                    <span>Laporan Transaksi</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {{ request()->routeIs('admin.laporan') ? 'active' : '' }}" href="{{ route('admin.laporan') }}">
-                                    Laporan
+                                <a class="nav-link {{ request()->routeIs('admin.laporan.distribusi*') ? 'active' : '' }}" href="{{ route('admin.laporan.distribusi') }}">
+                                    <i class="bi bi-file-earmark-check"></i>
+                                    <span>Laporan Distribusi</span>
+                                </a>
+                            </li>
+
+                            <!-- Admin Panitia Pengaturan -->
+                            <hr class="sidebar-divider">
+                            <div class="sidebar-heading">Sistem & Akses</div>
+                            <li class="nav-item">
+                                <a class="nav-link {{ request()->routeIs('admin.users.*') ? 'active' : '' }}" href="{{ route('admin.users.index') }}">
+                                    <i class="bi bi-person-lines-fill"></i>
+                                    <span>Manajemen Pengguna</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {{ request()->routeIs('admin.profil') ? 'active' : '' }}" href="{{ route('admin.profil') }}">
-                                    Profil
+                                <a class="nav-link {{ request()->routeIs('admin.settings.*') ? 'active' : '' }}" href="{{ route('admin.settings.index') }}">
+                                    <i class="bi bi-gear-fill"></i>
+                                    <span>Pengaturan Zakat</span>
                                 </a>
                             </li>
-                        @elseif(Auth::user()->isAmil())
+                        @endif
+
+                        @if(auth()->user()->role == 'amil')
+                            <!-- Amil Menu -->
+                            <hr class="sidebar-divider">
+                            <div class="sidebar-heading">Menu Utama Amil</div>
                             <li class="nav-item">
                                 <a class="nav-link {{ request()->routeIs('amil.dashboard') ? 'active' : '' }}" href="{{ route('amil.dashboard') }}">
-                                    Dashboard
+                                    <i class="bi bi-speedometer2"></i>
+                                    <span>Dashboard</span>
                                 </a>
                             </li>
+
+                            <hr class="sidebar-divider">
+                            <div class="sidebar-heading">Master Data Amil</div>
                             <li class="nav-item">
                                 <a class="nav-link {{ request()->routeIs('amil.mustahik.*') ? 'active' : '' }}" href="{{ route('amil.mustahik.index') }}">
-                                    Data Mustahik
+                                    <i class="bi bi-person-hearts"></i>
+                                    <span>Data Mustahik</span>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link {{ request()->routeIs('amil.distribusi.*') ? 'active' : '' }}" href="{{ route('amil.distribusi.index') }}">
-                                    Distribusi Zakat
+                                    <i class="bi bi-box-seam"></i>
+                                    <span>Distribusi Zakat</span>
                                 </a>
                             </li>
+
+                            <!-- Amil Laporan -->
+                            <hr class="sidebar-divider">
+                            <div class="sidebar-heading">Laporan & Cetak</div>
                             <li class="nav-item">
-                                <a class="nav-link {{ request()->routeIs('amil.laporan') ? 'active' : '' }}" href="{{ route('amil.laporan') }}">
-                                    Laporan
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link {{ request()->routeIs('amil.profil') ? 'active' : '' }}" href="{{ route('amil.profil') }}">
-                                    Profil
+                                <a class="nav-link {{ request()->routeIs('amil.laporan.distribusi*') ? 'active' : '' }}" href="{{ route('amil.laporan.distribusi') }}">
+                                    <i class="bi bi-file-earmark-check"></i>
+                                    <span>Laporan Distribusi</span>
                                 </a>
                             </li>
                         @endif

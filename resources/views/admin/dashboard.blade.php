@@ -84,7 +84,7 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-uppercase mb-1">Total Muzakki</div>
-                            <div class="h5 mb-0 font-weight-bold">{{ number_format($totalMuzakki) }} Jiwa</div>
+                            <div class="h5 mb-0 font-weight-bold">{{ number_format($totalMuzakki) }} Orang</div>
                         </div>
                         <div class="col-auto"><i class="bi bi-people fa-2x opacity-50"></i></div>
                     </div>
@@ -99,7 +99,7 @@
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
                             <div class="text-xs font-weight-bold text-uppercase mb-1">Total Mustahik</div>
-                            <div class="h5 mb-0 font-weight-bold">{{ number_format($totalMustahik) }} Jiwa</div>
+                            <div class="h5 mb-0 font-weight-bold">{{ number_format($totalMustahik) }} Orang</div>
                         </div>
                         <div class="col-auto"><i class="bi bi-people-fill fa-2x opacity-50"></i></div>
                     </div>
