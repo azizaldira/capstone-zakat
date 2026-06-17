@@ -76,7 +76,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {{ request()->routeIs('amil.mustahik') ? 'active' : '' }}" href="{{ route('amil.mustahik') }}">
+                                <a class="nav-link {{ request()->routeIs('amil.mustahik.*') ? 'active' : '' }}" href="{{ route('amil.mustahik.index') }}">
                                     Data Mustahik
                                 </a>
                             </li>
