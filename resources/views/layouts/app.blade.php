@@ -81,7 +81,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link {{ request()->routeIs('amil.distribusi') ? 'active' : '' }}" href="{{ route('amil.distribusi') }}">
+                                <a class="nav-link {{ request()->routeIs('amil.distribusi.*') ? 'active' : '' }}" href="{{ route('amil.distribusi.index') }}">
                                     Distribusi Zakat
                                 </a>
                             </li>
@@ -123,5 +123,9 @@
             </main>
         </div>
     </div>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    @stack('scripts')
 </body>
 </html>

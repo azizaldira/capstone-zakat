@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\DistribusiZakat;
 use Illuminate\Http\Request;
 
 class AmilController extends Controller
@@ -12,7 +13,9 @@ class AmilController extends Controller
             'totalMuzakki' => 0,
             'totalMustahik' => 0,
             'totalZakat' => 0,
-            'totalPenyaluran' => 0,
+            'totalPenyaluran' => DistribusiZakat::count(),
+            'totalNominalDistribusi' => DistribusiZakat::sum('nominal_distribusi'),
+            'jumlahMustahikPenerima' => DistribusiZakat::distinct('mustahik_id')->count('mustahik_id'),
         ];
         return view('amil.dashboard', $data);
     }

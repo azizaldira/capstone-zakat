@@ -21,6 +21,11 @@ class Mustahik extends Model
         'keterangan',
     ];
 
+    public function distribusiZakat()
+    {
+        return $this->hasMany(DistribusiZakat::class);
+    }
+
     protected static function booted(): void
     {
         static::creating(function (Mustahik $mustahik) {

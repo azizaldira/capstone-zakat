@@ -33,6 +33,7 @@ class DatabaseSeeder extends Seeder
             MuzakkiSeeder::class,
             TransaksiZakatSeeder::class,
             MustahikSeeder::class,
+            DistribusiZakatSeeder::class,
         ]);
     }
 }

@@ -22,7 +22,7 @@ Route::middleware(['auth', 'role:admin_panitia'])->prefix('admin')->name('admin.
 Route::middleware(['auth', 'role:amil'])->prefix('amil')->name('amil.')->group(function () {
     Route::get('/dashboard', [AmilController::class, 'dashboard'])->name('dashboard');
     Route::resource('mustahik', \App\Http\Controllers\MustahikController::class);
-    Route::get('/distribusi', [AmilController::class, 'distribusi'])->name('distribusi');
+    Route::resource('distribusi', \App\Http\Controllers\DistribusiZakatController::class);
     Route::get('/laporan', [AmilController::class, 'laporan'])->name('laporan');
     Route::get('/profil', [AmilController::class, 'profil'])->name('profil');
 });
