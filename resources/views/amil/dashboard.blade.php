@@ -8,7 +8,7 @@
     <div class="row">
         <!-- Total Mustahik -->
         <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card border-0 border-start border-4 border-primary h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
@@ -25,7 +25,7 @@
 
         <!-- Mustahik Aktif -->
         <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-success shadow h-100 py-2">
+            <div class="card border-0 border-start border-4 border-success h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
@@ -42,7 +42,7 @@
 
         <!-- Total Distribusi -->
         <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-warning shadow h-100 py-2">
+            <div class="card border-0 border-start border-4 border-warning h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
@@ -59,7 +59,7 @@
 
         <!-- Total Dana Tersalurkan -->
         <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-info shadow h-100 py-2">
+            <div class="card border-0 border-start border-4 border-info h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
@@ -79,8 +79,8 @@
     <div class="row">
         <!-- Area Chart Distribusi -->
         <div class="col-lg-7 mb-4">
-            <div class="card shadow mb-4 h-100">
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+            <div class="card border-0 mb-4 h-100">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between bg-white">
                     <h6 class="m-0 font-weight-bold text-info">Grafik Distribusi Dana ({{ date('Y') }})</h6>
                 </div>
                 <div class="card-body">
@@ -93,14 +93,14 @@
 
         <!-- Distribusi Terbaru -->
         <div class="col-lg-5 mb-4">
-            <div class="card shadow mb-4 h-100">
-                <div class="card-header py-3">
+            <div class="card border-0 mb-4 h-100">
+                <div class="card-header py-3 bg-white">
                     <h6 class="m-0 font-weight-bold text-primary">5 Distribusi Terbaru</h6>
                 </div>
                 <div class="card-body p-0">
                     <div class="table-responsive">
                         <table class="table table-sm table-hover table-striped mb-0">
-                            <thead class="table-light">
+                            <thead class="table-light text-muted">
                                 <tr>
                                     <th>Mustahik</th>
                                     <th>Kategori</th>

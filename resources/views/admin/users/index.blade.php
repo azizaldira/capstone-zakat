@@ -25,7 +25,7 @@
         @endif
 
         <div class="table-responsive">
-            <table class="table table-bordered table-hover align-middle">
+            <table class="table  table-hover align-middle">
                 <thead class="table-light">
                     <tr>
                         <th>No</th>
@@ -39,7 +39,7 @@
                 <tbody>
                     @forelse ($users as $index => $user)
                         <tr>
-                            <td>{{ $users->firstItem() + $index }}</td>
+                            <td>{{ $index + 1 }}</td>
                             <td>{{ $user->name }}
                                 @if($user->id === auth()->id())
                                     <span class="badge bg-success ms-1">Anda</span>
@@ -53,11 +53,11 @@
                             </td>
                             <td>{{ $user->created_at->format('d M Y') }}</td>
                             <td>
-                                <a href="{{ route('admin.users.show', $user->id) }}" class="btn btn-info btn-sm text-white" title="Detail"><i class="bi bi-eye"></i></a>
-                                <a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-warning btn-sm text-white" title="Edit"><i class="bi bi-pencil"></i></a>
+                                <a href="{{ route('admin.users.show', $user->id) }}" class="btn btn-info btn-sm text-white" title="Detail"><i class="bi bi-eye"></i> Detail</a>
+                                <a href="{{ route('admin.users.edit', $user->id) }}" class="btn btn-warning btn-sm text-white" title="Edit"><i class="bi bi-pencil"></i> Edit</a>
                                 @if($user->id !== auth()->id())
                                 <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#deleteModal{{ $user->id }}" title="Hapus">
-                                    <i class="bi bi-trash"></i>
+                                    <i class="bi bi-trash"></i> Hapus
                                 </button>
 
                                 <!-- Delete Modal -->
@@ -94,9 +94,6 @@
             </table>
         </div>
         
-        <div class="d-flex justify-content-end mt-3">
-            {{ $users->links() }}
-        </div>
     </div>
 </div>
 @endsection

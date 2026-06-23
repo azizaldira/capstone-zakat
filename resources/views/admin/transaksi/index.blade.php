@@ -26,7 +26,7 @@
         </form>
 
         <div class="table-responsive">
-            <table class="table table-bordered table-hover align-middle">
+            <table class="table  table-hover align-middle">
                 <thead class="table-light">
                     <tr>
                         <th>No</th>
@@ -42,7 +42,7 @@
                 <tbody>
                     @forelse ($transaksis as $index => $transaksi)
                         <tr>
-                            <td>{{ $transaksis->firstItem() + $index }}</td>
+                            <td>{{ $index + 1 }}</td>
                             <td><span class="badge bg-secondary">{{ $transaksi->kode_transaksi }}</span></td>
                             <td>{{ $transaksi->muzakki->nama_lengkap ?? 'Tidak Diketahui' }}</td>
                             <td>{{ $transaksi->jenis_zakat }}</td>
@@ -89,9 +89,6 @@
             </table>
         </div>
         
-        <div class="d-flex justify-content-end mt-3">
-            {{ $transaksis->withQueryString()->links() }}
-        </div>
     </div>
 </div>
 @endsection

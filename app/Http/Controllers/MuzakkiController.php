@@ -16,7 +16,7 @@ class MuzakkiController extends Controller
         $muzakkis = Muzakki::when($search, function ($query, $search) {
             return $query->where('nama_lengkap', 'like', "%{$search}%")
                          ->orWhere('kode_muzakki', 'like', "%{$search}%");
-        })->latest()->paginate(10);
+        })->latest()->get();
 
         return view('admin.muzakki.index', compact('muzakkis', 'search'));
     }

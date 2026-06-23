@@ -15,7 +15,7 @@
                     
                     <div class="mb-3">
                         <label for="muzakki_id" class="form-label">Nama Muzakki <span class="text-danger">*</span></label>
-                        <select class="form-select @error('muzakki_id') is-invalid @enderror" id="muzakki_id" name="muzakki_id" required>
+                        <select class="form-select tom-select @error('muzakki_id') is-invalid @enderror" id="muzakki_id" name="muzakki_id" required>
                             <option value="">-- Pilih Muzakki --</option>
                             @foreach($muzakkis as $muzakki)
                                 <option value="{{ $muzakki->id }}" {{ old('muzakki_id') == $muzakki->id ? 'selected' : '' }}>

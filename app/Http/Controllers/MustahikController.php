@@ -18,7 +18,7 @@ class MustahikController extends Controller
                              ->orWhere('nama_lengkap', 'like', "%{$search}%");
             })
             ->latest()
-            ->paginate(10);
+            ->get();
 
         return view('amil.mustahik.index', compact('mustahiks', 'search'));
     }

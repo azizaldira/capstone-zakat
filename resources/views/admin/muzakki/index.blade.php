@@ -26,7 +26,7 @@
         </form>
 
         <div class="table-responsive">
-            <table class="table table-bordered table-hover align-middle">
+            <table class="table  table-hover align-middle">
                 <thead class="table-light">
                     <tr>
                         <th>No</th>
@@ -40,7 +40,7 @@
                 <tbody>
                     @forelse ($muzakkis as $index => $muzakki)
                         <tr>
-                            <td>{{ $muzakkis->firstItem() + $index }}</td>
+                            <td>{{ $index + 1 }}</td>
                             <td><span class="badge bg-secondary">{{ $muzakki->kode_muzakki }}</span></td>
                             <td>{{ $muzakki->nama_lengkap }}</td>
                             <td>{{ $muzakki->jenis_kelamin == 'L' ? 'Laki-laki' : 'Perempuan' }}</td>
@@ -85,9 +85,6 @@
             </table>
         </div>
         
-        <div class="d-flex justify-content-end mt-3">
-            {{ $muzakkis->withQueryString()->links() }}
-        </div>
     </div>
 </div>
 @endsection

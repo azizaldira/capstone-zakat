@@ -22,7 +22,7 @@ class TransaksiZakatController extends Controller
                              });
             })
             ->latest()
-            ->paginate(10);
+            ->get();
 
         return view('admin.transaksi.index', compact('transaksis', 'search'));
     }

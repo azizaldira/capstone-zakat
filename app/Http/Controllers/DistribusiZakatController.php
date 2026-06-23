@@ -22,7 +22,7 @@ class DistribusiZakatController extends Controller
                              });
             })
             ->latest()
-            ->paginate(10);
+            ->get();
 
         return view('amil.distribusi.index', compact('distribusis', 'search'));
     }

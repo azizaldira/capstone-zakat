@@ -4,34 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ config('app.name', 'ZIS Masjid Al Madani') }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/css/tom-select.bootstrap5.min.css" rel="stylesheet">
     @vite(['resources/scss/app.scss', 'resources/js/app.js'])
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8f9fa;
-        }
-        .sidebar {
-            min-height: 100vh;
-            box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-            background-color: #212529;
-            color: #fff;
-        }
-        .sidebar .nav-link {
-            color: rgba(255, 255, 255, .75);
-            font-weight: 500;
-        }
-        .sidebar .nav-link:hover, .sidebar .nav-link.active {
-            color: #fff;
-            background-color: rgba(255, 255, 255, .1);
-            border-radius: .25rem;
-        }
-        .navbar-brand {
-            font-weight: 700;
-        }
-        .main-content {
-            padding: 20px;
-        }
-    </style>
+
 </head>
 <body>
     <div class="container-fluid">
@@ -44,8 +23,6 @@
                     </div>
                     <ul class="nav flex-column px-2">
                         <!-- Common Menu (All Roles) -->
-                        <hr class="sidebar-divider">
-                        <div class="sidebar-heading">Fitur Umum</div>
                         
                         <li class="nav-item">
                             <a class="nav-link {{ request()->routeIs('profil.*') ? 'active' : '' }}" href="{{ route('profil.index') }}">
@@ -56,8 +33,6 @@
 
                         @if(auth()->user()->role == 'admin_panitia')
                             <!-- Admin Panitia Menu -->
-                            <hr class="sidebar-divider">
-                            <div class="sidebar-heading">Menu Utama Admin</div>
                             <li class="nav-item">
                                 <a class="nav-link {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}" href="{{ route('admin.dashboard') }}">
                                     <i class="bi bi-speedometer2"></i>
@@ -65,8 +40,6 @@
                                 </a>
                             </li>
                             
-                            <hr class="sidebar-divider">
-                            <div class="sidebar-heading">Master Data Admin</div>
                             <li class="nav-item">
                                 <a class="nav-link {{ request()->routeIs('admin.muzakki.*') ? 'active' : '' }}" href="{{ route('admin.muzakki.index') }}">
                                     <i class="bi bi-people"></i>
@@ -81,8 +54,6 @@
                             </li>
 
                             <!-- Admin Panitia Laporan -->
-                            <hr class="sidebar-divider">
-                            <div class="sidebar-heading">Laporan & Cetak</div>
                             <li class="nav-item">
                                 <a class="nav-link {{ request()->routeIs('admin.laporan.transaksi*') ? 'active' : '' }}" href="{{ route('admin.laporan.transaksi') }}">
                                     <i class="bi bi-file-earmark-bar-graph"></i>
@@ -97,8 +68,6 @@
                             </li>
 
                             <!-- Admin Panitia Pengaturan -->
-                            <hr class="sidebar-divider">
-                            <div class="sidebar-heading">Sistem & Akses</div>
                             <li class="nav-item">
                                 <a class="nav-link {{ request()->routeIs('admin.users.*') ? 'active' : '' }}" href="{{ route('admin.users.index') }}">
                                     <i class="bi bi-person-lines-fill"></i>
@@ -115,8 +84,6 @@
 
                         @if(auth()->user()->role == 'amil')
                             <!-- Amil Menu -->
-                            <hr class="sidebar-divider">
-                            <div class="sidebar-heading">Menu Utama Amil</div>
                             <li class="nav-item">
                                 <a class="nav-link {{ request()->routeIs('amil.dashboard') ? 'active' : '' }}" href="{{ route('amil.dashboard') }}">
                                     <i class="bi bi-speedometer2"></i>
@@ -124,8 +91,6 @@
                                 </a>
                             </li>
 
-                            <hr class="sidebar-divider">
-                            <div class="sidebar-heading">Master Data Amil</div>
                             <li class="nav-item">
                                 <a class="nav-link {{ request()->routeIs('amil.mustahik.*') ? 'active' : '' }}" href="{{ route('amil.mustahik.index') }}">
                                     <i class="bi bi-person-hearts"></i>
@@ -140,8 +105,6 @@
                             </li>
 
                             <!-- Amil Laporan -->
-                            <hr class="sidebar-divider">
-                            <div class="sidebar-heading">Laporan & Cetak</div>
                             <li class="nav-item">
                                 <a class="nav-link {{ request()->routeIs('amil.laporan.distribusi*') ? 'active' : '' }}" href="{{ route('amil.laporan.distribusi') }}">
                                     <i class="bi bi-file-earmark-check"></i>
@@ -154,15 +117,15 @@
             </nav>
 
             <!-- Main content -->
-            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 main-content">
+            <main class="col-md-9 ms-sm-auto col-lg-10 offset-md-3 offset-lg-2 px-md-4 main-content">
                 <nav class="navbar navbar-expand-lg navbar-light bg-white mb-4 shadow-sm rounded-3 mt-3">
                     <div class="container-fluid">
                         <span class="navbar-brand mb-0 h1">@yield('header')</span>
                         
                         <div class="d-flex align-items-center">
-                            <span class="me-3 text-secondary">
+                            <span class="me-3 text-secondary d-none d-md-inline">
                                 Welcome, <strong>{{ Auth::user()->name }}</strong> 
-                                <span class="badge bg-primary ms-1">{{ Auth::user()->role }}</span>
+                                <span class="badge bg-primary-subtle text-primary border border-primary-subtle ms-1 rounded-pill">{{ Auth::user()->role }}</span>
                             </span>
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
@@ -179,6 +142,20 @@
     
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/js/tom-select.complete.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.tom-select').forEach(function(el) {
+                new TomSelect(el, {
+                    create: false,
+                    sortField: {
+                        field: "text",
+                        direction: "asc"
+                    }
+                });
+            });
+        });
+    </script>
     @stack('scripts')
 </body>
 </html>

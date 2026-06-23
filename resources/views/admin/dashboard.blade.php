@@ -8,7 +8,7 @@
     <div class="row">
         <!-- Dana Masuk -->
         <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-success shadow h-100 py-2">
+            <div class="card border-0 border-start border-4 border-success h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
@@ -25,7 +25,7 @@
 
         <!-- Dana Tersalurkan -->
         <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-info shadow h-100 py-2">
+            <div class="card border-0 border-start border-4 border-info h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
@@ -42,7 +42,7 @@
 
         <!-- Sisa Dana -->
         <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card border-0 border-start border-4 border-primary h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
@@ -59,7 +59,7 @@
 
         <!-- Total Transaksi -->
         <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-left-warning shadow h-100 py-2">
+            <div class="card border-0 border-start border-4 border-warning h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
@@ -79,7 +79,7 @@
     <div class="row">
         <!-- Total Muzakki -->
         <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card bg-success text-white shadow h-100 py-2">
+            <div class="card bg-success text-white border-0 h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
@@ -94,7 +94,7 @@
 
         <!-- Total Mustahik -->
         <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card bg-info text-white shadow h-100 py-2">
+            <div class="card bg-info text-white border-0 h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
@@ -109,7 +109,7 @@
 
         <!-- Total Distribusi -->
         <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card bg-secondary text-white shadow h-100 py-2">
+            <div class="card bg-secondary text-white border-0 h-100 py-2">
                 <div class="card-body">
                     <div class="row no-gutters align-items-center">
                         <div class="col mr-2">
@@ -144,8 +144,8 @@
     <div class="row">
         <!-- Area Chart Penerimaan -->
         <div class="col-xl-6 col-lg-6 mb-4">
-            <div class="card shadow mb-4 h-100">
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+            <div class="card border-0 mb-4 h-100">
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between bg-white">
                     <h6 class="m-0 font-weight-bold text-success">Grafik Penerimaan Zakat ({{ date('Y') }})</h6>
                 </div>
                 <div class="card-body">
@@ -175,14 +175,14 @@
     <div class="row">
         <!-- Transaksi Terbaru -->
         <div class="col-lg-6 mb-4">
-            <div class="card shadow mb-4">
-                <div class="card-header py-3">
+            <div class="card border-0 mb-4">
+                <div class="card-header py-3 bg-white">
                     <h6 class="m-0 font-weight-bold text-primary">5 Transaksi Zakat Terbaru</h6>
                 </div>
                 <div class="card-body p-0">
                     <div class="table-responsive">
                         <table class="table table-sm table-hover table-striped mb-0">
-                            <thead class="table-light">
+                            <thead class="table-light text-muted">
                                 <tr>
                                     <th>Kode</th>
                                     <th>Muzakki</th>
